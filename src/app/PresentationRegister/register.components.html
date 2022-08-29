@@ -1,0 +1,40 @@
+<div class="card">
+  <div class="card-body">
+    <h4 class="card-title"><span class="lstick"></span>Vendedores</h4>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <table class="table table-hover table-border">
+        <thead>
+          <tr>
+            <th scope="col">Codigo</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+            <th scope="col"># Documento</th>
+            <th scope="col">Ciudad</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let Seller of Sellers">
+            <!-- <appformSeller [Seller]="Seller"></appformSeller> -->
+            <th scope="row">{{Seller.code}}</th>
+            <td>{{Seller.name}}</td>
+            <td>{{Seller.lasT_NAME}}</td>
+            <td>{{Seller.document}}</td>
+            <td>{{Seller.ciTies.description}}</td>
+            <td>
+              <button class="btn btn-primary" (click)="edit(Seller)">Editar</button>
+              <button class="btn btn-danger ms-2" (click)="remove(Seller)">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <button class="btn btn-primary" (click)="newp()">
+        Nuevo
+      </button>
+    </div>
+  </div>
+</div>
